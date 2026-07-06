@@ -5,6 +5,7 @@ import model.dao.factory.DAOFactory;
 import model.entities.Department;
 import model.entities.Seller;
 
+import java.util.Date;
 import java.util.List;
 
 public class Program {
@@ -30,6 +31,11 @@ public class Program {
         }
         System.out.println();
 
-
+        System.out.println("TESTE 4: Seller obj.insert()");
+        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, new Department(2, null));
+        sellerDAO.insert(newSeller);
+        if(newSeller.getId() != null){
+            System.out.println("Inserted! New id = " + newSeller.getId());
+        }
     }
 }
